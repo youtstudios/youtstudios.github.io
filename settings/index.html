@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        @keyframes loading {
+            0% { content: "BOOTING"; }
+            25% { content: "BOOTING."; }
+            50% { content: "BOOTING.."; }
+            75% { content: "BOOTING..."; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .loading-text::after {
+            content: "BOOTING...";
+            animation: loading 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-text"></div>
+
+    <script>
+        setTimeout(function(){
+            window.location.href = "/settings/index01.html";
+        }, 10000); // 10 seconds
+    </script>
+</body>
+</html>
